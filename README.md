@@ -78,7 +78,15 @@ node server.js --warmup 200    # B. 预热回放池（唯一会批量调用 API 
 - **SIM 模式**：没有 key 时自动启用，用本地模拟概率，视觉完整、**零调用**。
 - **LIVE 模式**：`.env` 里有 `TYPESAFE_API_KEY` 就自动启用，实测台走真实调用。
 
-> ⚠️ `.env` 里是明文凭证，已加入 `.gitignore`。**不要提交、不要分享**；如果 key 曾经在任何地方泄露过，先在 TypeSafe 控制台轮换再用。
+本地要走 LIVE，先复制示例再填 key：
+
+```bash
+copy .env.example .env     # Windows；macOS / Linux 用 cp
+```
+
+然后把 `.env` 里的 `TYPESAFE_API_KEY=apikey_your_key_here` 换成你自己的。`PORT`、`HOST` 有默认值，一般不用动。
+
+> ⚠️ `.env` 里是明文凭证，已加入 `.gitignore`。**不要提交、不要分享**；仓库里只提交 `.env.example`（占位符，没有真实 key）。如果 key 曾经在任何地方泄露过，先在 TypeSafe 控制台轮换再用。
 
 右上角徽标显示当前模式：`SIM · 未配置 key` / `LIVE · 真实调用`。
 
