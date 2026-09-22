@@ -4,6 +4,29 @@
 
 **一句话概念**：所有 AI 都在写字，只有它在做决定。
 
+**线上直接看**：[https://jev-demo.pages.dev](https://jev-demo.pages.dev)
+
+下面四张是线上实拍。
+
+<p align="center">
+  <img src="shots/standby.png" alt="开场页" width="860">
+</p>
+
+<p align="center">
+  <img src="shots/flood.png" alt="第一幕 · 洪流" width="860"><br>
+  <sub>第一幕 · 洪流：事件持续涌入，一次调用并行回答三个问题，按置信度分流</sub>
+</p>
+
+<p align="center">
+  <img src="shots/slowmo.png" alt="第二幕 · 实测台" width="860"><br>
+  <sub>第二幕 · 实测台：粘贴一条真实工单，当场调用，171ms 给出判定</sub>
+</p>
+
+<p align="center">
+  <img src="shots/board.png" alt="第三幕 · 数据板" width="860"><br>
+  <sub>第三幕 · 数据板：真实调用次数、延迟、成本，以及可回看的决策流水</sub>
+</p>
+
 ---
 
 ## 跑起来 & 访问
