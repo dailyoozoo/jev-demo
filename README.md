@@ -232,11 +232,13 @@ jev-demo/
 
 ## 8. 线上版（GitHub + Cloudflare Pages）
 
-线上地址（部署完成后填入）：
+线上地址：
 
 ```
 https://jev-demo.pages.dev
 ```
+
+仓库：https://github.com/dailyoozoo/jev-demo
 
 线上和本地是同一套页面。后端是 Cloudflare Pages Functions（`functions/api/`），不是 Node 进程：
 
