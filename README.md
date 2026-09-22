@@ -177,7 +177,8 @@ node server.js --warmup 200    # B. 预热回放池（唯一会批量调用 API 
 jev-demo/
 ├── start.cmd            # 双击启动（自动找 node + 开浏览器）
 ├── server.js            # HTTP 服务 + Jev 调用 + 门禁 + 模拟器（零依赖）
-├── .env                 # TYPESAFE_API_KEY（明文，已 gitignore）
+├── .env.example         # 环境变量模板（可提交，只有占位符）
+├── .env                 # 复制 .env.example 后填入 key（明文，已 gitignore）
 ├── data/
 │   ├── events.json      # 1000 条中文语料（真实感工单/评论/邮件/电话转写/弹幕）
 │   └── replay.json      # --warmup 生成的真实响应存档（洪流幕回放用）
