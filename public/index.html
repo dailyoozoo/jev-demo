@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DECISION FLOOD · Jev System One</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="offline" hidden>
+  <div class="off-card">
+    <p class="off-title">这个页面没有连上服务端</p>
+    <p class="off-body">你现在是直接打开了 <code>index.html</code> 文件，所以拿不到数据、也调不到 Jev。</p>
+    <p class="off-body">请改用下面这个地址访问（先确保服务已启动）：</p>
+    <p class="off-url">http://localhost:8787</p>
+    <p class="off-hint">启动方式：双击 <code>jev-demo\start.cmd</code>，或在项目目录执行 <code>node server.js --open</code></p>
+  </div>
+</div>
+
+<div class="overlay standby" id="standby">
+  <div class="sb-inner">
+    <div class="sb-top">
+      <span class="livedot"></span>
+      <span class="sb-title">DECISION FLOOD</span>
+      <span class="badge">JEV · SYSTEM ONE</span>
+    </div>
+    <p class="sb-sub">所有 AI 都在写字，只有它在做决定</p>
+    <p class="sb-desc">把一条工单/评论丢给 Jev，它在一次调用里并行回答三个问题，并附上可直接当门禁用的置信度。<br>
+      <b>实测台</b>每一次判定都是当场真实调用，可验证；<b>洪流幕</b>默认回放预录的真实存档（0 调用），切「数据源：真实」才逐条现调。</p>
+    <div class="sb-stats" id="sbStats"></div>
+    <button class="sb-start" id="startBtn">开 始 演 示</button>
+    <p class="sb-hint">开始后：<b>空格</b> 暂停 · <b>1/2/3</b> 切幕 · <b>H</b> 隐藏控制条 · <b>F</b> 全屏</p>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="livedot"></span>
+    <span class="title">DECISION FLOOD</span>
+    <span class="badge">JEV · SYSTEM ONE</span>
+    <span class="sub">所有 AI 都在写字，只有它在做决定</span>
+  </div>
+  <div class="topright">
+    <span class="realbadge" id="realBadge">真实调用 0 次</span>
+    <span class="modebadge" id="modeBadge">SIM</span>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<main class="stage">
+  <section class="col col-inflow">
+    <div class="colhead"><span>事件洪流 · 涌入</span><span class="cnt" id="inflowCnt">0</span></div>
+    <div class="inflow" id="inflow"></div>
+  </section>
+
+  <section class="col col-core">
+    <div class="colhead"><span>决策核心 · 三问并行 · 一次调用</span><span class="cnt" id="coreLatency">—</span></div>
+    <div class="corewrap" id="coreWrap">
+      <div class="idle" id="coreIdle">
+        <div class="idle-ring"></div>
+        <p>等待事件流入</p>
+      </div>
+      <div class="corecard" id="coreCard" hidden>
+        <div class="statebox">
+          <div class="statebox-head"><span class="chan" id="sChan">工单</span><span class="evid" id="sId">#0001</span></div>
+          <p class="statetext" id="sText"></p>
+        </div>
+        <div class="qlist" id="qlist"></div>
+        <div class="metarow">
+          <div class="metacard m-latency"><p class="mlabel">端到端延迟</p><p class="mvalue" id="mLatency">—</p></div>
+          <div class="metacard m-conf"><p class="mlabel">置信度门禁</p><p class="mvalue" id="mGate">—</p></div>
+          <div class="metacard m-cost"><p class="mlabel">本次成本</p><p class="mvalue" id="mCost">—</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="col col-lanes">
+    <div class="colhead"><span>置信度分流</span><span class="cnt" id="laneTotal">0</span></div>
+    <div class="lanes">
+      <div class="lane lane-auto">
+        <div class="lanehead"><span class="lanename" id="laneNameAuto">≥0.85 自动执行</span><span class="lanecnt" id="laneCntAuto">0</span></div>
+        <div class="lanebar"><i id="laneBarAuto"></i></div>
+        <div class="lanelist" id="laneListAuto"></div>
+      </div>
+      <div class="lane lane-review">
+        <div class="lanehead"><span class="lanename" id="laneNameReview">0.6–0.85 升级复核</span><span class="lanecnt" id="laneCntReview">0</span></div>
+        <div class="lanebar"><i id="laneBarReview"></i></div>
+        <div class="lanelist" id="laneListReview"></div>
+      </div>
+      <div class="lane lane-human">
+        <div class="lanehead"><span class="lanename" id="laneNameHuman">&lt;0.6 / 需人工 转人工</span><span class="lanecnt" id="laneCntHuman">0</span></div>
+        <div class="lanebar"><i id="laneBarHuman"></i></div>
+        <div class="lanelist" id="laneListHuman"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="scoreboard">
+  <div class="sb"><p class="sblabel">已决策</p><p class="sbvalue" id="sbDecided">0</p></div>
+  <div class="sb"><p class="sblabel">平均延迟</p><p class="sbvalue good" id="sbLatency">— ms</p></div>
+  <div class="sb"><p class="sblabel">并行问题 / 次</p><p class="sbvalue" id="sbParallel">3</p></div>
+  <div class="sb"><p class="sblabel" title="按「已决策」条数折算（含回放/模拟，这些不花钱），用来和右栏同量对比；真实花费见第三幕数据板">Jev 折算成本</p><p class="sbvalue good" id="sbCost">$0.0000</p></div>
+  <div class="sb"><p class="sblabel" title="同样条数若交给 LLM 的成本估算（官方 demo 口径 $0.01388/次），非真实支出">同量 LLM 估算</p><p class="sbvalue bad" id="sbLlm">$0.0000</p></div>
+  <div class="sb"><p class="sblabel">输出 token</p><p class="sbvalue good" id="sbOut">免费</p></div>
+</footer>
+
+<div class="overlay" id="slowmo" hidden>
+  <div class="sl-head">
+    <span class="sl-tag">第二幕 · 实测台</span>
+    <span class="sl-hint">粘贴任意评论 / 工单 / 邮件，Ctrl+Enter 立即判定 &nbsp;·&nbsp; 每次判定 = 一次真实调用</span>
+  </div>
+  <div class="sl-input">
+    <textarea id="slInput" rows="2" placeholder="在这里粘贴一条评论、工单或任意文本，然后按 Ctrl+Enter（或点右侧按钮）…"></textarea>
+    <div class="sl-actions">
+      <button class="btn primary" id="slRun">判定这条</button>
+      <button class="btn" id="slRandom" title="从语料池随机抽一条并真实调用（约 $0.000025）">随机一条</button>
+      <button class="btn" id="slClear">清空</button>
+    </div>
+  </div>
+  <div class="sl-body" id="slBody"></div>
+  <div class="sl-foot">
+    <span class="sl-note" id="slNote"></span>
+    <span class="sl-histwrap"><span class="sl-histlabel">最近判定</span><span class="sl-hist" id="slHist"></span></span>
+  </div>
+</div>
+
+<div class="overlay" id="board" hidden>
+  <div class="bd-head">
+    <span class="sl-tag">第三幕 · 数据板</span>
+    <span class="sl-hint">以下全部是这台机器上真实发生的事，每一次都可复现、可导出核对</span>
+  </div>
+  <div class="bd-wrap">
+    <div class="bd-card bd-real">
+      <p class="bd-k">本机真实实测 <span class="bd-tag-real">每一次都可追溯</span></p>
+      <div class="bd-live">
+        <div><p class="bd-k2" title="只统计本页面真实发出的 POST /v1/systemone；回放池与模拟都不计入">真实调用次数</p><p class="bd-v" id="bdLiveCalls">0</p></div>
+        <div><p class="bd-k2">真实调用延迟 中位/P90</p><p class="bd-v" id="bdLiveLat" title="只统计本页面真实发出的请求；回放数据不计入">— / —</p></div>
+        <div><p class="bd-k2" title="只累计真实调用产生的费用；回放池与模拟不产生费用">累计成本（真实调用）</p><p class="bd-v" id="bdLiveCost">$0.000000</p></div>
+        <div><p class="bd-k2">当前模式</p><p class="bd-v" id="bdLiveMode">—</p></div>
+      </div>
+      <div class="bd-loghead">
+        <p class="bd-k2" title="真实 = 当场发出的调用；回放 = 重放预录的真实存档（不花钱、不产生调用）；模拟 = 无 key 时的本地模拟。洪流幕走回放池，所以流水条数会远多于真实调用次数。">决策流水 <b id="bdHistCount">0</b> 条 <span id="bdHistBreak"></span>· 点任意一行回看完整三问</p>
+        <button class="btn" id="csvBtn">导出 CSV</button>
+      </div>
+      <div class="bd-log" id="bdLog"></div>
+      <p class="bd-f">数字来自本页面每一次请求的用量回执；同一次请求也会打印在运行服务的那个窗口里，可交叉核对。</p>
+    </div>
+  </div>
+  <div class="bd-slogan">不发文字，只做决定。<span>jev-latest · POST /v1/systemone</span></div>
+</div>
+
+<div class="overlay detail" id="detailOverlay" hidden>
+  <div class="dt-head">
+    <span class="sl-tag">决策详情 · 回看</span>
+    <span class="sl-hint">该次决策存档的完整输入与三问结果</span>
+    <button class="btn" id="detailClose">关闭 (Esc)</button>
+  </div>
+  <div class="dt-body" id="detailBody"></div>
+</div>
+
+<div class="controls" id="controls">
+  <button class="btn" data-scene="flood">1 洪流</button>
+  <button class="btn" data-scene="slowmo">2 实测台</button>
+  <button class="btn" data-scene="board">3 数据板</button>
+  <span class="csep"></span>
+  <button class="btn" id="speedBtn" title="只调事件涌入的展示节奏（每条决策的间隔），模型本身的响应速度不受影响">洪流节奏 1×</button>
+  <button class="btn" id="srcBtn" title="洪流幕的数据来源：回放=读历史存档（免费）；真实=逐条真实调用 Jev（每条约 $0.000025）">数据源：回放</button>
+  <button class="btn" id="pauseBtn">暂停</button>
+  <button class="btn" id="resetBtn" title="清零统计并回到首页">重置</button>
+  <span class="csep"></span>
+  <button class="btn" id="hideBtn" title="录制时隐藏控制条（H）">隐藏 (H)</button>
+  <button class="btn" id="fullBtn">全屏 (F)</button>
+</div>
+
+<script>
+window.addEventListener("error", (e) => {
+  let n = document.getElementById("__err");
+  if (!n) {
+    n = document.createElement("div"); n.id = "__err";
+    n.style.cssText = "position:fixed;left:0;bottom:0;z-index:999;background:#DC2626;color:#fff;font:14px/1.5 monospace;padding:8px 12px;max-width:100vw";
+    document.body.appendChild(n);
+  }
+  n.textContent = "JS error: " + e.message + " @ line " + e.lineno + ":" + e.colno + (e.error && e.error.stack ? " | " + e.error.stack.split("\n")[1] : "");
+});
+</script>
+<script src="app.js"></script>
+</body>
+</html>

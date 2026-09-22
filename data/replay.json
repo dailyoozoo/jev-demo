@@ -1,0 +1,2942 @@
+[
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我被重复扣了两次款，订单 A-1042 扣了两笔 49 元，要求立即退还多扣的部分！"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "technical": 0,
+     "refund": 1,
+     "sales": 0,
+     "noise": 0,
+     "account": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 1.96,
+    "confidence": 0.96,
+    "probabilities": {
+     "0": 0,
+     "1": 0.04,
+     "2": 0.96,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.85
+   },
+   "gate": "human",
+   "latency_ms": 651,
+   "usage": {
+    "input_tokens": 624,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000026208
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "更新之后 App 直接闪退，根本打不开，你们测试过吗"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "technical": 1,
+     "refund": 0,
+     "noise": 0,
+     "sales": 0,
+     "churn": 0,
+     "account": 0,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 1.95,
+    "confidence": 0.95,
+    "probabilities": {
+     "0": 0,
+     "1": 0.05,
+     "2": 0.95,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.76
+   },
+   "gate": "review",
+   "latency_ms": 668,
+   "usage": {
+    "input_tokens": 605,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.00002541
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "登录一直提示密码错误，但我确定没改过，验证码也收不到"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.94,
+    "probabilities": {
+     "sales": 0,
+     "refund": 0,
+     "noise": 0,
+     "billing": 0,
+     "technical": 0.95,
+     "churn": 0,
+     "account": 0.05
+    }
+   },
+   "anger": {
+    "score": 0.95,
+    "confidence": 0.93,
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.93,
+     "2": 0.01,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.48
+   },
+   "gate": "auto",
+   "latency_ms": 258,
+   "usage": {
+    "input_tokens": 608,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025536
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "想了解一下企业版的报价和私有化部署方案，我们公司大概 200 人规模"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "sales",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "technical": 0,
+     "refund": 0,
+     "noise": 0,
+     "sales": 1,
+     "account": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.48
+   },
+   "gate": "auto",
+   "latency_ms": 237,
+   "usage": {
+    "input_tokens": 616,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025872
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "会员自动续费了但我上个月就取消了，这笔钱必须退回来"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 0.99,
+    "probabilities": {
+     "churn": 0,
+     "sales": 0,
+     "noise": 0,
+     "technical": 0,
+     "refund": 0.99,
+     "billing": 0.01,
+     "account": 0
+    }
+   },
+   "anger": {
+    "score": 1.85,
+    "confidence": 0.85,
+    "probabilities": {
+     "0": 0,
+     "1": 0.15,
+     "2": 0.85,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.68
+   },
+   "gate": "review",
+   "latency_ms": 255,
+   "usage": {
+    "input_tokens": 607,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025494000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "电话转写",
+   "text": "嗯我的发票抬头开错了，能帮忙重开一张吗，不着急"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 1,
+    "probabilities": {
+     "sales": 0,
+     "technical": 0,
+     "churn": 0,
+     "refund": 0,
+     "account": 0,
+     "noise": 0,
+     "billing": 1
+    }
+   },
+   "anger": {
+    "score": 0.03,
+    "confidence": 0.97,
+    "probabilities": {
+     "0": 0.97,
+     "1": 0.03,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.18
+   },
+   "gate": "auto",
+   "latency_ms": 250,
+   "usage": {
+    "input_tokens": 606,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025452000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "客服电话打了三天没人接，这就是你们的服务态度？再不解决我就去投诉平台曝光"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "churn",
+    "confidence": 0.18,
+    "probabilities": {
+     "account": 0.08,
+     "noise": 0.27,
+     "refund": 0.01,
+     "technical": 0.29,
+     "sales": 0.02,
+     "billing": 0.02,
+     "churn": 0.31
+    }
+   },
+   "anger": {
+    "score": 3,
+    "confidence": 1,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3": 1
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.86
+   },
+   "gate": "human",
+   "latency_ms": 298,
+   "usage": {
+    "input_tokens": 618,
+    "output_tokens": 98
+   },
+   "cost_usd": 0.000025956000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "支付的时候一直转圈圈，卡在收银台页面进不去，换了三个浏览器都一样"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.99,
+    "probabilities": {
+     "technical": 0.99,
+     "churn": 0,
+     "noise": 0,
+     "billing": 0.01,
+     "account": 0,
+     "sales": 0,
+     "refund": 0
+    }
+   },
+   "anger": {
+    "score": 0.97,
+    "confidence": 0.92,
+    "probabilities": {
+     "0": 0.05,
+     "1": 0.93,
+     "2": 0.02,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.56
+   },
+   "gate": "review",
+   "latency_ms": 280,
+   "usage": {
+    "input_tokens": 615,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025830000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "你好，请问年付方案比月付能省多少？有没有教育优惠"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.7,
+    "probabilities": {
+     "sales": 0.26,
+     "technical": 0,
+     "refund": 0,
+     "noise": 0,
+     "account": 0,
+     "churn": 0,
+     "billing": 0.74
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.15
+   },
+   "gate": "review",
+   "latency_ms": 283,
+   "usage": {
+    "input_tokens": 605,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.00002541
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我的账号好像被盗了，绑定的手机号不是我操作的，里面有我的全部订单记录"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "account",
+    "confidence": 1,
+    "probabilities": {
+     "sales": 0,
+     "technical": 0,
+     "noise": 0,
+     "churn": 0,
+     "account": 1,
+     "refund": 0,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 0.71,
+    "confidence": 0.55,
+    "probabilities": {
+     "0": 0.37,
+     "1": 0.56,
+     "2": 0.07,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.91
+   },
+   "gate": "human",
+   "latency_ms": 269,
+   "usage": {
+    "input_tokens": 616,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025872
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "扣了钱不开通会员，什么破产品，垃圾"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.81,
+    "probabilities": {
+     "account": 0,
+     "sales": 0,
+     "technical": 0.01,
+     "billing": 0.84,
+     "churn": 0.05,
+     "noise": 0,
+     "refund": 0.1
+    }
+   },
+   "anger": {
+    "score": 2,
+    "confidence": 1,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 1,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.58
+   },
+   "gate": "review",
+   "latency_ms": 232,
+   "usage": {
+    "input_tokens": 599,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025158000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "麻烦帮我查一下上个月的账单明细，有几笔费用我看不懂"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 1,
+    "probabilities": {
+     "technical": 0,
+     "billing": 1,
+     "noise": 0,
+     "refund": 0,
+     "sales": 0,
+     "account": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0.1,
+    "confidence": 0.9,
+    "probabilities": {
+     "0": 0.9,
+     "1": 0.1,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.29
+   },
+   "gate": "auto",
+   "latency_ms": 270,
+   "usage": {
+    "input_tokens": 607,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025494000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "弹幕",
+   "text": "这软件也太难用了吧，界面卡得要死"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "refund": 0,
+     "account": 0,
+     "sales": 0,
+     "noise": 0,
+     "churn": 0,
+     "technical": 1,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 1.98,
+    "confidence": 0.98,
+    "probabilities": {
+     "0": 0,
+     "1": 0.02,
+     "2": 0.98,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.22
+   },
+   "gate": "auto",
+   "latency_ms": 250,
+   "usage": {
+    "input_tokens": 598,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025116000000000005
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "订单取消了为什么还不退款？页面显示 3-5 个工作日已经过去两周了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 1,
+    "probabilities": {
+     "churn": 0,
+     "sales": 0,
+     "technical": 0,
+     "noise": 0,
+     "billing": 0,
+     "account": 0,
+     "refund": 1
+    }
+   },
+   "anger": {
+    "score": 1.32,
+    "confidence": 0.68,
+    "probabilities": {
+     "0": 0,
+     "1": 0.68,
+     "2": 0.32,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.83
+   },
+   "gate": "human",
+   "latency_ms": 221,
+   "usage": {
+    "input_tokens": 615,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025830000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "我们团队想批量采购 50 个席位，能否安排商务对接，顺便看下 API 限额"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "sales",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "account": 0,
+     "churn": 0,
+     "refund": 0,
+     "technical": 0,
+     "noise": 0,
+     "sales": 1
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.52
+   },
+   "gate": "review",
+   "latency_ms": 339,
+   "usage": {
+    "input_tokens": 617,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025914000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "电话转写",
+   "text": "我手机换号了，收不到验证码，现在账号登不上去，帮我换个绑定手机"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "account",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "churn": 0,
+     "account": 1,
+     "technical": 0,
+     "refund": 0,
+     "sales": 0,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 0.22,
+    "confidence": 0.78,
+    "probabilities": {
+     "0": 0.79,
+     "1": 0.21,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.74
+   },
+   "gate": "review",
+   "latency_ms": 273,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "发票丢了可以补开电子版的吗？"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "noise": 0,
+     "refund": 0,
+     "technical": 0,
+     "sales": 0,
+     "churn": 0,
+     "billing": 1
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.18
+   },
+   "gate": "auto",
+   "latency_ms": 291,
+   "usage": {
+    "input_tokens": 597,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025074
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "客服小姑娘态度挺好的，问题也解决了，好评"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "noise",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "churn": 0,
+     "refund": 0,
+     "sales": 0,
+     "technical": 0,
+     "billing": 0,
+     "noise": 1
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.06
+   },
+   "gate": "auto",
+   "latency_ms": 241,
+   "usage": {
+    "input_tokens": 602,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025284000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "网页版加载白屏，控制台报一堆 JS 错误，我截图发你们开发者看看"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "sales": 0,
+     "technical": 1,
+     "refund": 0,
+     "churn": 0,
+     "noise": 0,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 0.83,
+    "confidence": 0.79,
+    "probabilities": {
+     "0": 0.19,
+     "1": 0.79,
+     "2": 0.02,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.68
+   },
+   "gate": "review",
+   "latency_ms": 243,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我要投诉！承诺 24 小时内处理，现在第 5 天了没有任何回复！再拖我就打 12315"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "noise",
+    "confidence": 0.35,
+    "probabilities": {
+     "churn": 0.09,
+     "technical": 0.23,
+     "refund": 0.15,
+     "account": 0.05,
+     "billing": 0.01,
+     "sales": 0.03,
+     "noise": 0.44
+    }
+   },
+   "anger": {
+    "score": 2.98,
+    "confidence": 0.98,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 0.02,
+     "3": 0.98
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.86
+   },
+   "gate": "human",
+   "latency_ms": 650,
+   "usage": {
+    "input_tokens": 626,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000026292000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "咨询一下：免费版和付费版的功能差异在哪？数据导出是付费功能吗"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "sales",
+    "confidence": 0.77,
+    "probabilities": {
+     "account": 0,
+     "noise": 0,
+     "refund": 0,
+     "churn": 0,
+     "sales": 0.8,
+     "billing": 0.2,
+     "technical": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.13
+   },
+   "gate": "review",
+   "latency_ms": 246,
+   "usage": {
+    "input_tokens": 612,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025704
+  }
+ },
+ {
+  "event": {
+   "channel": "弹幕",
+   "text": "求客服小姐姐联系方式（狗头）"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "noise",
+    "confidence": 0.91,
+    "probabilities": {
+     "refund": 0,
+     "noise": 0.93,
+     "churn": 0,
+     "technical": 0,
+     "account": 0,
+     "sales": 0.07,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 0.03,
+    "confidence": 0.97,
+    "probabilities": {
+     "0": 0.98,
+     "1": 0.02,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.21
+   },
+   "gate": "auto",
+   "latency_ms": 222,
+   "usage": {
+    "input_tokens": 596,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025032
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "优惠券为什么用不了？明明在有效期内核对过规则，提示不满足条件"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.85,
+    "probabilities": {
+     "account": 0,
+     "billing": 0.88,
+     "sales": 0,
+     "noise": 0,
+     "churn": 0,
+     "technical": 0.12,
+     "refund": 0
+    }
+   },
+   "anger": {
+    "score": 1.09,
+    "confidence": 0.91,
+    "probabilities": {
+     "0": 0,
+     "1": 0.91,
+     "2": 0.09,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.33
+   },
+   "gate": "auto",
+   "latency_ms": 252,
+   "usage": {
+    "input_tokens": 612,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025704
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我的数据没了！昨天还都在，今天打开全空了，你们服务器是不是出事了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "noise": 0,
+     "technical": 1,
+     "account": 0,
+     "billing": 0,
+     "sales": 0,
+     "refund": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 1.95,
+    "confidence": 0.95,
+    "probabilities": {
+     "0": 0,
+     "1": 0.05,
+     "2": 0.95,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.8
+   },
+   "gate": "human",
+   "latency_ms": 280,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "建议优化一下退款流程，等太久会流失用户的，提个意见"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 0.99,
+    "probabilities": {
+     "refund": 0.99,
+     "technical": 0,
+     "account": 0,
+     "churn": 0.01,
+     "noise": 0,
+     "sales": 0,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 0.98,
+    "confidence": 0.97,
+    "probabilities": {
+     "0": 0.03,
+     "1": 0.97,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.26
+   },
+   "gate": "auto",
+   "latency_ms": 292,
+   "usage": {
+    "input_tokens": 607,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025494000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "电话转写",
+   "text": "就是想问下我这个套餐下个月几号到期，要不要续费"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.84,
+    "probabilities": {
+     "account": 0.01,
+     "billing": 0.86,
+     "churn": 0.12,
+     "refund": 0,
+     "sales": 0.01,
+     "noise": 0,
+     "technical": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.18
+   },
+   "gate": "review",
+   "latency_ms": 263,
+   "usage": {
+    "input_tokens": 605,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.00002541
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "苹果内购买的会员，安卓端登录后看不到，这是同步问题还是我买错了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.48,
+    "probabilities": {
+     "technical": 0.56,
+     "sales": 0,
+     "refund": 0,
+     "account": 0.03,
+     "billing": 0.41,
+     "churn": 0,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 0.14,
+    "confidence": 0.86,
+    "probabilities": {
+     "0": 0.86,
+     "1": 0.14,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.25
+   },
+   "gate": "human",
+   "latency_ms": 223,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "之前谈好的年付折扣码失效了，请帮我核实一下优惠码 GC-2026-09"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.97,
+    "probabilities": {
+     "noise": 0,
+     "technical": 0,
+     "account": 0,
+     "billing": 0.97,
+     "sales": 0.03,
+     "refund": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0.62,
+    "confidence": 0.62,
+    "probabilities": {
+     "0": 0.38,
+     "1": 0.62,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.44
+   },
+   "gate": "auto",
+   "latency_ms": 231,
+   "usage": {
+    "input_tokens": 615,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025830000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "你们是不是偷偷涨价了？同样套餐上个月 39 这个月 59，没有任何通知"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "refund": 0,
+     "noise": 0,
+     "sales": 0,
+     "churn": 0,
+     "technical": 0,
+     "billing": 1
+    }
+   },
+   "anger": {
+    "score": 1.68,
+    "confidence": 0.68,
+    "probabilities": {
+     "0": 0,
+     "1": 0.32,
+     "2": 0.68,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.71
+   },
+   "gate": "review",
+   "latency_ms": 314,
+   "usage": {
+    "input_tokens": 617,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025914000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "登录不上登录不上登录不上！！试了一个小时了！！到底什么时候修好"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "technical": 1,
+     "billing": 0,
+     "noise": 0,
+     "refund": 0,
+     "account": 0,
+     "sales": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 2,
+    "confidence": 1,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 1,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.53
+   },
+   "gate": "review",
+   "latency_ms": 220,
+   "usage": {
+    "input_tokens": 611,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025662000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "工单系统本身有 bug，我提交的工单显示成功但列表里没有"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "technical": 1,
+     "billing": 0,
+     "account": 0,
+     "noise": 0,
+     "sales": 0,
+     "refund": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0.81,
+    "confidence": 0.8,
+    "probabilities": {
+     "0": 0.2,
+     "1": 0.79,
+     "2": 0.01,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.56
+   },
+   "gate": "review",
+   "latency_ms": 223,
+   "usage": {
+    "input_tokens": 607,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025494000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "弹幕",
+   "text": "主播这个软件哪下的，看着不错"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "sales",
+    "confidence": 0.4,
+    "probabilities": {
+     "churn": 0,
+     "noise": 0.33,
+     "refund": 0,
+     "account": 0,
+     "billing": 0,
+     "technical": 0.18,
+     "sales": 0.49
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.13
+   },
+   "gate": "human",
+   "latency_ms": 283,
+   "usage": {
+    "input_tokens": 596,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025032
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "小孩误操作买了年度会员，麻烦退款，是未成年人操作我可以提供证明"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 1,
+    "probabilities": {
+     "churn": 0,
+     "technical": 0,
+     "refund": 1,
+     "billing": 0,
+     "noise": 0,
+     "account": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 0.45,
+    "confidence": 0.55,
+    "probabilities": {
+     "0": 0.55,
+     "1": 0.45,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.64
+   },
+   "gate": "review",
+   "latency_ms": 283,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "请问支持对公转账吗？我们财务流程需要走银行汇票"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.86,
+    "probabilities": {
+     "sales": 0.12,
+     "technical": 0,
+     "churn": 0,
+     "refund": 0,
+     "noise": 0,
+     "billing": 0.88,
+     "account": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.36
+   },
+   "gate": "auto",
+   "latency_ms": 225,
+   "usage": {
+    "input_tokens": 605,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.00002541
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "短信验证码轰炸，一分钟收了 20 条，你们接口是不是被刷了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.84,
+    "probabilities": {
+     "billing": 0,
+     "churn": 0,
+     "account": 0.13,
+     "technical": 0.87,
+     "sales": 0,
+     "noise": 0,
+     "refund": 0
+    }
+   },
+   "anger": {
+    "score": 1.55,
+    "confidence": 0.55,
+    "probabilities": {
+     "0": 0,
+     "1": 0.45,
+     "2": 0.55,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.82
+   },
+   "gate": "human",
+   "latency_ms": 318,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "能不能出个深色模式啊，晚上用眼睛要瞎了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.9,
+    "probabilities": {
+     "sales": 0,
+     "technical": 0.92,
+     "noise": 0.08,
+     "refund": 0,
+     "churn": 0,
+     "billing": 0,
+     "account": 0
+    }
+   },
+   "anger": {
+    "score": 1.58,
+    "confidence": 0.58,
+    "probabilities": {
+     "0": 0,
+     "1": 0.42,
+     "2": 0.58,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.1
+   },
+   "gate": "auto",
+   "latency_ms": 299,
+   "usage": {
+    "input_tokens": 602,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025284000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我的会员权益没有生效，广告还在，这是欺诈吧？买之前明明写的去广告"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.44,
+    "probabilities": {
+     "churn": 0.01,
+     "technical": 0.53,
+     "refund": 0.07,
+     "billing": 0.37,
+     "account": 0.02,
+     "sales": 0,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 1.93,
+    "confidence": 0.92,
+    "probabilities": {
+     "0": 0,
+     "1": 0.07,
+     "2": 0.93,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.63
+   },
+   "gate": "human",
+   "latency_ms": 274,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "电话转写",
+   "text": "帮我看看我的积分是不是过期了，昨天还有 2000 今天剩 300"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "account",
+    "confidence": 0.33,
+    "probabilities": {
+     "billing": 0.39,
+     "sales": 0,
+     "technical": 0.16,
+     "noise": 0.01,
+     "refund": 0,
+     "churn": 0.01,
+     "account": 0.43
+    }
+   },
+   "anger": {
+    "score": 0.66,
+    "confidence": 0.65,
+    "probabilities": {
+     "0": 0.35,
+     "1": 0.65,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.31
+   },
+   "gate": "human",
+   "latency_ms": 239,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "上传文件一直失败，提示网络错误，但我网络是通的，100M 宽带"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "refund": 0,
+     "technical": 1,
+     "billing": 0,
+     "noise": 0,
+     "churn": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 0.94,
+    "confidence": 0.93,
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.9400000000000001,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.31
+   },
+   "gate": "auto",
+   "latency_ms": 233,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "你好，我是一名大学生，做课程设计想请教下你们文档里的一个接口细节"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.96,
+    "probabilities": {
+     "billing": 0,
+     "refund": 0,
+     "account": 0,
+     "noise": 0.03,
+     "technical": 0.97,
+     "sales": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.09
+   },
+   "gate": "auto",
+   "latency_ms": 279,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "退款到哪了？订单号 RS-88213，银行说没收到，你们说已退，到底退没退"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 1,
+    "probabilities": {
+     "noise": 0,
+     "technical": 0,
+     "churn": 0,
+     "sales": 0,
+     "account": 0,
+     "billing": 0,
+     "refund": 1
+    }
+   },
+   "anger": {
+    "score": 1.73,
+    "confidence": 0.73,
+    "probabilities": {
+     "0": 0,
+     "1": 0.27,
+     "2": 0.73,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.78
+   },
+   "gate": "review",
+   "latency_ms": 285,
+   "usage": {
+    "input_tokens": 617,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025914000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "更新后耗电特别快，后台一直唤醒，求修复"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "sales": 0,
+     "churn": 0,
+     "noise": 0,
+     "billing": 0,
+     "technical": 1,
+     "account": 0,
+     "refund": 0
+    }
+   },
+   "anger": {
+    "score": 1.22,
+    "confidence": 0.78,
+    "probabilities": {
+     "0": 0,
+     "1": 0.78,
+     "2": 0.22,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.46
+   },
+   "gate": "auto",
+   "latency_ms": 291,
+   "usage": {
+    "input_tokens": 602,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025284000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我要注销账号，请删除我的全部个人信息，配合个人信息保护法的要求"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "churn",
+    "confidence": 0.97,
+    "probabilities": {
+     "account": 0.02,
+     "churn": 0.98,
+     "sales": 0,
+     "technical": 0,
+     "refund": 0,
+     "noise": 0,
+     "billing": 0
+    }
+   },
+   "anger": {
+    "score": 0.12,
+    "confidence": 0.88,
+    "probabilities": {
+     "0": 0.88,
+     "1": 0.12,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.36
+   },
+   "gate": "auto",
+   "latency_ms": 741,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 98
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "企业微信登录集成的回调地址配置了三天了还是无效，报 redirect_uri 错误"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "technical": 1,
+     "refund": 0,
+     "churn": 0,
+     "noise": 0,
+     "billing": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 0.88,
+    "confidence": 0.87,
+    "probabilities": {
+     "0": 0.13,
+     "1": 0.87,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.55
+   },
+   "gate": "review",
+   "latency_ms": 268,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "弹幕",
+   "text": "666"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "noise",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "churn": 0,
+     "technical": 0,
+     "billing": 0,
+     "noise": 1,
+     "refund": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 1.38,
+    "confidence": 0.27,
+    "probabilities": {
+     "0": 0.26,
+     "1": 0.17,
+     "2": 0.51,
+     "3": 0.06
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.27
+   },
+   "gate": "auto",
+   "latency_ms": 252,
+   "usage": {
+    "input_tokens": 585,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.00002457
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我用的公司账号，离职同事的邮箱还绑着主管理员，现在收不到审批通知，需要转移管理员权限"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "account",
+    "confidence": 0.99,
+    "probabilities": {
+     "account": 0.99,
+     "billing": 0,
+     "sales": 0,
+     "refund": 0,
+     "churn": 0,
+     "technical": 0.01,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 0.07,
+    "confidence": 0.93,
+    "probabilities": {
+     "0": 0.93,
+     "1": 0.07,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.81
+   },
+   "gate": "human",
+   "latency_ms": 268,
+   "usage": {
+    "input_tokens": 624,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000026208
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "请问你们的数据中心在境内还是境外？我们采购需要过安全合规评估"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "sales",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "noise": 0,
+     "technical": 0,
+     "refund": 0,
+     "sales": 1,
+     "churn": 0,
+     "account": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.43
+   },
+   "gate": "auto",
+   "latency_ms": 277,
+   "usage": {
+    "input_tokens": 612,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025704
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "昨晚服务中断了 40 分钟吧？我们几个同事都掉线，有没有事故报告"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "churn": 0,
+     "sales": 0,
+     "refund": 0,
+     "noise": 0,
+     "billing": 0,
+     "account": 0,
+     "technical": 1
+    }
+   },
+   "anger": {
+    "score": 0.85,
+    "confidence": 0.85,
+    "probabilities": {
+     "0": 0.15,
+     "1": 0.85,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.52
+   },
+   "gate": "review",
+   "latency_ms": 307,
+   "usage": {
+    "input_tokens": 615,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025830000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "就这还敢收费？免费工具都比你们好用"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.83,
+    "probabilities": {
+     "account": 0,
+     "sales": 0,
+     "technical": 0.01,
+     "refund": 0.01,
+     "noise": 0.05,
+     "churn": 0.07,
+     "billing": 0.86
+    }
+   },
+   "anger": {
+    "score": 2,
+    "confidence": 1,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 1,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.33
+   },
+   "gate": "review",
+   "latency_ms": 273,
+   "usage": {
+    "input_tokens": 599,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025158000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "电话转写",
+   "text": "老人机收不到你们 App 的推送，是不是要开什么权限，麻烦一步步教下"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "account": 0,
+     "churn": 0,
+     "refund": 0,
+     "sales": 0,
+     "noise": 0,
+     "technical": 1
+    }
+   },
+   "anger": {
+    "score": 0.27,
+    "confidence": 0.73,
+    "probabilities": {
+     "0": 0.73,
+     "1": 0.27,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.25
+   },
+   "gate": "auto",
+   "latency_ms": 270,
+   "usage": {
+    "input_tokens": 613,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025746000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "重复创建了两份一样的年度报表任务，帮我取消一个，别扣我配额"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 0.3,
+    "probabilities": {
+     "noise": 0,
+     "churn": 0.01,
+     "account": 0.02,
+     "sales": 0,
+     "technical": 0.4,
+     "refund": 0.16,
+     "billing": 0.4
+    }
+   },
+   "anger": {
+    "score": 0.9,
+    "confidence": 0.88,
+    "probabilities": {
+     "0": 0.11,
+     "1": 0.88,
+     "2": 0.01,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.28
+   },
+   "gate": "human",
+   "latency_ms": 279,
+   "usage": {
+    "input_tokens": 611,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025662000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我要退款并且永久注销！产品体验太差了，这个问题我反馈过四次没有一次被认真处理"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "churn",
+    "confidence": 0.8,
+    "probabilities": {
+     "billing": 0,
+     "technical": 0,
+     "churn": 0.83,
+     "refund": 0.17,
+     "noise": 0,
+     "account": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 2.04,
+    "confidence": 0.96,
+    "probabilities": {
+     "0": 0,
+     "1": 0,
+     "2": 0.96,
+     "3": 0.04
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.85
+   },
+   "gate": "human",
+   "latency_ms": 242,
+   "usage": {
+    "input_tokens": 620,
+    "output_tokens": 98
+   },
+   "cost_usd": 0.00002604
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "小问题：设置页面的标题错别字，「账户」写成「帐户」了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.47,
+    "probabilities": {
+     "sales": 0,
+     "churn": 0,
+     "noise": 0.33,
+     "refund": 0,
+     "account": 0.11,
+     "technical": 0.54,
+     "billing": 0.01
+    }
+   },
+   "anger": {
+    "score": 0.1,
+    "confidence": 0.9,
+    "probabilities": {
+     "0": 0.9,
+     "1": 0.1,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.18
+   },
+   "gate": "human",
+   "latency_ms": 212,
+   "usage": {
+    "input_tokens": 607,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025494000000000004
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "验证码邮箱收不到，垃圾箱也没有，邮箱是 Gmail，是不是被拦了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.95,
+    "probabilities": {
+     "account": 0.04,
+     "billing": 0,
+     "noise": 0,
+     "technical": 0.96,
+     "sales": 0,
+     "refund": 0,
+     "churn": 0
+    }
+   },
+   "anger": {
+    "score": 0.49,
+    "confidence": 0.51,
+    "probabilities": {
+     "0": 0.51,
+     "1": 0.49,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.26
+   },
+   "gate": "auto",
+   "latency_ms": 214,
+   "usage": {
+    "input_tokens": 610,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025620000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "邮件",
+   "text": "我们是从竞品迁移过来的用户，有没有迁移工具和数据导入的文档"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.49,
+    "probabilities": {
+     "churn": 0,
+     "billing": 0,
+     "account": 0,
+     "refund": 0,
+     "noise": 0,
+     "sales": 0.43,
+     "technical": 0.5700000000000001
+    }
+   },
+   "anger": {
+    "score": 0.01,
+    "confidence": 0.99,
+    "probabilities": {
+     "0": 0.99,
+     "1": 0.01,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.28
+   },
+   "gate": "human",
+   "latency_ms": 273,
+   "usage": {
+    "input_tokens": 611,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025662000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "帮我合并两个账号，一个手机注册的一个邮箱注册的，资料想挪到一起"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "account",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "technical": 0,
+     "account": 1,
+     "churn": 0,
+     "refund": 0,
+     "sales": 0,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.42
+   },
+   "gate": "auto",
+   "latency_ms": 234,
+   "usage": {
+    "input_tokens": 614,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025788
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "价格页面和实际结算价格不一致！标价 99 结算 129，这不属于价格欺诈吗"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "billing",
+    "confidence": 1,
+    "probabilities": {
+     "account": 0,
+     "churn": 0,
+     "sales": 0,
+     "technical": 0,
+     "refund": 0,
+     "billing": 1,
+     "noise": 0
+    }
+   },
+   "anger": {
+    "score": 1.71,
+    "confidence": 0.71,
+    "probabilities": {
+     "0": 0,
+     "1": 0.29,
+     "2": 0.71,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.75
+   },
+   "gate": "review",
+   "latency_ms": 679,
+   "usage": {
+    "input_tokens": 619,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025998
+  }
+ },
+ {
+  "event": {
+   "channel": "弹幕",
+   "text": "卡了卡了卡了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "technical",
+    "confidence": 0.84,
+    "probabilities": {
+     "noise": 0.13,
+     "technical": 0.87,
+     "account": 0,
+     "billing": 0,
+     "sales": 0,
+     "churn": 0,
+     "refund": 0
+    }
+   },
+   "anger": {
+    "score": 1.49,
+    "confidence": 0.49,
+    "probabilities": {
+     "0": 0.01,
+     "1": 0.48,
+     "2": 0.51,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.31
+   },
+   "gate": "review",
+   "latency_ms": 300,
+   "usage": {
+    "input_tokens": 588,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000024696000000000002
+  }
+ },
+ {
+  "event": {
+   "channel": "评论",
+   "text": "新版本 UI 好看多了，交互也顺，给产品经理加鸡腿"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "noise",
+    "confidence": 1,
+    "probabilities": {
+     "technical": 0,
+     "account": 0,
+     "noise": 1,
+     "refund": 0,
+     "churn": 0,
+     "billing": 0,
+     "sales": 0
+    }
+   },
+   "anger": {
+    "score": 0,
+    "confidence": 1,
+    "probabilities": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.07
+   },
+   "gate": "auto",
+   "latency_ms": 220,
+   "usage": {
+    "input_tokens": 606,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025452000000000003
+  }
+ },
+ {
+  "event": {
+   "channel": "工单",
+   "text": "我的退款被退到已注销的旧卡上了怎么办？卡都注销半年了"
+  },
+  "result": {
+   "mode": "live",
+   "model": "jev-1.13.0",
+   "queue": {
+    "choice": "refund",
+    "confidence": 1,
+    "probabilities": {
+     "billing": 0,
+     "technical": 0,
+     "churn": 0,
+     "noise": 0,
+     "sales": 0,
+     "account": 0,
+     "refund": 1
+    }
+   },
+   "anger": {
+    "score": 0.82,
+    "confidence": 0.76,
+    "probabilities": {
+     "0": 0.21,
+     "1": 0.76,
+     "2": 0.03,
+     "3": 0
+    },
+    "legend": {
+     "0": "平静，仅陈述事实",
+     "1": "不满，但语气克制",
+     "2": "强烈不满，语气激烈",
+     "3": "暴怒，威胁投诉或曝光"
+    }
+   },
+   "human": {
+    "noul": 0.75
+   },
+   "gate": "review",
+   "latency_ms": 287,
+   "usage": {
+    "input_tokens": 608,
+    "output_tokens": 97
+   },
+   "cost_usd": 0.000025536
+  }
+ }
+]

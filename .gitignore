@@ -1,0 +1,11 @@
+# API 凭证：绝不提交
+.env
+.env.*
+!.env.example
+
+# 依赖与工具缓存
+node_modules/
+.wrangler/
+
+# 验证中间产物（最终对外截图在 shots/ 根目录，保留）
+shots/review/

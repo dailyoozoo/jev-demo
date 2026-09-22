@@ -1,0 +1,6 @@
+name = "jev-demo"
+compatibility_date = "2026-09-01"
+pages_build_output_dir = "public"
+
+# 线上密钥不写在这里。部署后执行：
+#   wrangler pages secret put TYPESAFE_API_KEY --project-name jev-demo
